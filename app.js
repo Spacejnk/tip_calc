@@ -11,16 +11,7 @@ function calculateTip() {
         return;
     }
 
-     // function to calculate tip then divide by individuals
-     let total = (totalBill * gratuity) / totalPeople;
-     // round to two decimal places
-     total = Math.round(total * 100) / 100;
-     // next line allows us to always have two digits after decimal point
-     total = total.toFixed(2);
-     // Display the tip
-     document.getElementById('totaltip').style.display = 'block';
-     document.getElementById('tip').innerHTML = total;
-
+    // has to be above caluclate tip function -- (totalBill * gratuity)
     // check to see if this input is empty or less than equal to 1 // people input can be empty
     if(totalPeople === "" || totalPeople <= 1) {
         totalPeople = 1;
@@ -28,6 +19,17 @@ function calculateTip() {
     } else {
         document.getElementById('each').style.display = "block";
     }
+
+     // function to calculate tip then divide by individuals
+     let total = (totalBill * gratuity) / totalPeople;
+     // round to two decimal places
+     total = Math.round(total * 100) / 100;
+     // next line allows us to always have two digits after decimal point
+     total = total.toFixed(2);
+     // Display the tip
+     // console.log(total);
+     document.getElementById('totaltip').style.display = 'block';
+     document.getElementById('tip').innerHTML = total;
 
 };
 
